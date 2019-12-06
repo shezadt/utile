@@ -1,2 +1,6 @@
 # utile
-An R package to facilitate analysis
+A set of personal functions to ease analysis in R.
+
+## Analysis
+
+## Visualisation
