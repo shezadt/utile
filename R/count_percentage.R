@@ -8,7 +8,7 @@
 #' @keywords count, percentage
 #' @importFrom rlang enquo
 #' @importFrom magrittr %>%
-#' @importFrom dplyr filter
+#' @importFrom tidyr drop_na
 #' @importFrom dplyr group_by
 #' @importFrom dplyr summarise
 #' @importFrom dplyr n
@@ -25,7 +25,7 @@ count_percentage <- function(df,
 
   # Count the observations and compute the percentage
   df  %>%
-    filter(!is.na(!!col_name))  %>% #remove the NAs
+    drop_na(!!col_name)  %>% #remove the NAs
     group_by(!!col_name)  %>%
     summarise(n = n())  %>% #count the observations
     mutate(percentage = round(n * 100 / sum(n), digits)) #percentage
