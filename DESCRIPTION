@@ -12,4 +12,9 @@ RoxygenNote: 7.0.2
 Imports: 
     dplyr,
     rlang,
-    magrittr
+    magrittr,
+    ggplot2,
+    officer,
+    rvg,
+    gridExtra,
+    tidyr
