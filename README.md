@@ -38,7 +38,7 @@ library(ggplot2)
 listP <- list()
 
 # Store a plot
-listP[["first_chart"]] <- ggplot(data = iris ) +
+listP[["first_chart"]] <- ggplot(data = iris) +
 geom_point(mapping = aes(Sepal.Length, Petal.Length))
 
 # Export the plots in a PowerPoint file named my_plots.pptx
