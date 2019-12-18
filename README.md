@@ -1,18 +1,19 @@
 utile
 =====
 
-A set of personal functions to ease analysis in R.
-
-Analysis
---------
+A set of utility functions to ease analysis in R.
 
 The function `count_percentage` allows you to count the observations per
 group and compute the associated percentage.
 
-For instance, count\_percentage will return for the iris dataset
+For instance, count\_percentage will return the following for the iris
+dataset
 
 ``` r
+# Load the library
 library(utile)
+
+# Count the percentage of Species in the iris dataset
 count_percentage(iris, Species, digits = 1)
 ```
 
@@ -23,5 +24,23 @@ count_percentage(iris, Species, digits = 1)
     ## 2 versicolor    50       33.3
     ## 3 virginica     50       33.3
 
-Visualisation
--------------
+The function `export_charts_ppt` allows you to export a list of ggplots
+into a PowerPoint file.
+
+For instance:
+
+``` r
+# Load the libraries
+library(utile)
+library(ggplot2)
+
+# Create an empty list to store the plots
+listP <- list()
+
+# Store a plot
+listP[["first_chart"]] <- ggplot(data = iris ) +
+geom_point(mapping = aes(Sepal.Length, Petal.Length))
+
+# Export the plots in a PowerPoint file named my_plots.pptx
+export_charts_ppt(listP, export_path = "my_plots.pptx")
+```
