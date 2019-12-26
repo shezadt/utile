@@ -3,6 +3,9 @@ utile
 
 A set of utility functions to ease analysis in R.
 
+Author: Shezad T.  
+Starting date: 12/2019
+
 The function `count_percentage` allows you to count the observations per
 group and compute the associated percentage.
 
