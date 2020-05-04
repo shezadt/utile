@@ -27,8 +27,9 @@ export_charts_ppt(
 This function allows you export a list of charts made in ggplot to Powerpoint.
 }
 \examples{
-listP = list()
-listP[["first_chart"]] <- ggplot(data = iris ) +
+library(ggplot2)
+listP <- list()
+listP[["first_chart"]] <- ggplot(data = iris) +
 geom_point(mapping = aes(Sepal.Length, Petal.Length))
 export_charts_ppt(listP, export_path = "test.pptx")
 }
