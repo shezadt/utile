@@ -31,9 +31,9 @@ This function allows you to create a bar chart and display the labels
 \examples{
 library(ggplot2)
 df_gg <- count_percentage(iris, Species)
-barchart(df = df_gg, x = Species, y = percentage, label = percentage, x_label = "Species",
-y_label = "Percentage", title = "Distribution of Species in Iris dataset",
-vjust = -0.25)
+barchart(df = df_gg, x = Species, y = percentage, label = percentage,
+x_label = "Species", y_label = "Percentage",
+title = "Distribution of Species in Iris dataset", vjust = -0.25)
 }
 \keyword{label}
 \keyword{plot,}

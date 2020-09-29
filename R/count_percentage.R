@@ -22,7 +22,7 @@ count_percentage <- function(df,
                              digits = 1) {
   # Enquo the column name
   col_name <- enquo(col_name)
-
+  
   # Count the observations and compute the percentage
   df  %>%
     drop_na(!!col_name)  %>% #remove the NAs
