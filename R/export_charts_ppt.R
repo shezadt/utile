@@ -6,6 +6,7 @@
 #' @param template_path The path of the Powerpoint template
 #' @param layout Name of the Powerpoint layout
 #' @param master Name of the Powerpoint master
+#' @param as_vectors Whether to export the ggplots as vectors
 #' @keywords chart, ppt
 #' @importFrom officer read_pptx
 #' @importFrom officer add_slide
@@ -27,7 +28,8 @@ export_charts_ppt <-
            export_path,
            template_path = NULL,
            layout = "Title and Content",
-           master = "Office Theme") {
+           master = "Office Theme",
+           as_vectors = TRUE) {
     
     # Read the template PPT
     doc <- read_pptx(path = template_path)
@@ -39,7 +41,8 @@ export_charts_ppt <-
       chart <- listP[[chart_name]]
       
       # Make it editable
-      editable_chart <- dml(ggobj = chart)
+      if (isTRUE(as_vectors)) {editable_chart <- dml(ggobj = chart)}
+      if (!isTRUE(as_vectors)) {editable_chart <- chart}
       
       # Check if it is a ggplot
       if (class(chart)[1] == "gtable") {

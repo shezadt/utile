@@ -9,7 +9,8 @@ export_charts_ppt(
   export_path,
   template_path = NULL,
   layout = "Title and Content",
-  master = "Office Theme"
+  master = "Office Theme",
+  as_vectors = TRUE
 )
 }
 \arguments{
@@ -22,6 +23,8 @@ export_charts_ppt(
 \item{layout}{Name of the Powerpoint layout}
 
 \item{master}{Name of the Powerpoint master}
+
+\item{as_vectors}{Whether to export the ggplots as vectors}
 }
 \description{
 This function allows you export a list of charts made in ggplot to Powerpoint.
